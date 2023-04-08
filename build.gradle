@@ -1,6 +1,9 @@
 buildscript {
     repositories {
+        mavenLocal()
+        mavenCentral()
         maven { url "https://repo.grails.org/grails/core" }
+        maven { url 'https://repo.gradle.org/gradle/libs-releases' }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
@@ -9,63 +12,63 @@ buildscript {
     }
 }
 
+ext {
+    commonBuild = 'https://raw.githubusercontent.com/rainboyan/grails-common-build/22.0.x'
+}
+
 version project.projectVersion
 group "org.grails.plugins"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
-apply plugin: "com.github.erdi.webdriver-binaries"
-apply from:"https://raw.githubusercontent.com/grails/grails-common-build/master/common-docs.gradle"
 apply plugin:"org.grails.grails-plugin"
 apply plugin:"org.grails.internal.grails-plugin-publish"
+apply plugin:"org.grails.grails-gsp"
+apply plugin: "com.github.erdi.webdriver-binaries"
+// apply from: resources.text.fromInsecureUri("${commonBuild}/common-docs.gradle")
 
 repositories {
+    mavenLocal()
+    mavenCentral()
     maven { url "https://repo.grails.org/grails/core" }
 }
 
 dependencies {
-    api "org.springframework.boot:spring-boot-starter-logging"
-    api "org.springframework.boot:spring-boot-autoconfigure"
-    api "org.grails:grails-core"
-    api "org.springframework.boot:spring-boot-starter-actuator"
-    api "org.springframework.boot:spring-boot-starter-tomcat"
-    api "org.grails:grails-web-boot"
-    api "org.grails:grails-logging"
-    api "org.grails:grails-plugin-rest"
-    api "org.grails:grails-plugin-databinding"
-    api "org.grails:grails-plugin-i18n"
-    api "org.grails:grails-plugin-services"
-    api "org.grails:grails-plugin-url-mappings"
-    api "org.grails:grails-plugin-interceptors"
-    api "org.grails.plugins:async"
-    api "org.grails.plugins:scaffolding"
-    api "org.codehaus.gpars:gpars:1.2.1"
-    api "org.grails.plugins:gsp"
-
-    runtimeOnly "org.grails.plugins:async"
-    console "org.grails:grails-console"
+    compileOnly "org.grails:grails-core"
+	compileOnly "org.grails:grails-datastore-core:$gormVersion"
+	compileOnly "org.grails:grails-datastore-gorm:$gormVersion"
+    implementation 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-logging"
+    implementation "org.springframework.boot:spring-boot-starter-tomcat"
+    implementation "org.grails:grails-web-boot"
+    implementation "org.grails:grails-logging"
+    implementation "org.grails:grails-plugin-rest"
+    implementation "org.grails:grails-plugin-databinding"
+    implementation "org.grails:grails-plugin-i18n"
+    implementation "org.grails:grails-plugin-services"
+    implementation "org.grails:grails-plugin-url-mappings"
+    implementation "org.grails:grails-plugin-interceptors"
+    implementation "org.grails.plugins:gsp"
+    implementation "org.grails.plugins:geb:$gebVersion"
     profile "org.grails.profiles:web-plugin"
-    compileOnly "org.grails:grails-plugin-services"
-    compileOnly "org.grails:grails-plugin-domain-class"
     testImplementation "org.grails:grails-gorm-testing-support"
     testImplementation "org.grails:grails-web-testing-support"
     testImplementation "org.mockito:mockito-core"
     testImplementation "org.grails.plugins:geb"
-
-    testRuntimeOnly "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
-    testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
-    testRuntimeOnly "org.seleniumhq.selenium:selenium-safari-driver:$seleniumVersion"
-
+    testImplementation "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
+    testImplementation "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
+    testImplementation "org.seleniumhq.selenium:selenium-safari-driver:$seleniumSafariDriverVersion"
     testImplementation "org.seleniumhq.selenium:selenium-remote-driver:$seleniumVersion"
     testImplementation "org.seleniumhq.selenium:selenium-api:$seleniumVersion"
     testImplementation "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
-
-
-    api "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
-
-
+    testImplementation "org.seleniumhq.selenium:selenium-htmlunit-driver:2.52.0"
+    testImplementation "net.sourceforge.htmlunit:htmlunit:2.18"
 }
 apply from: rootProject.file('gradle/testVerbose.gradle')
+
+sourceCompatibility = 11
+targetCompatibility = 11
 
 webdriverBinaries {
     if (!System.getenv().containsKey('GITHUB_ACTIONS')) {
@@ -99,6 +102,7 @@ bootRun {
 }
 // enable if you wish to package this plugin as a standalone application
 bootJar.enabled = false
+
 grailsPublish {
     userOrg = 'grails'
     githubSlug = 'grails/grails-cache'
@@ -107,7 +111,7 @@ grailsPublish {
     }
     title = project.title
     desc = project.projectDesc
-    developers = [jeffbrown: "Jeff Scott Brown", "puneetbehl": "Puneet Behl"]
+    developers = [jeffbrown: "Jeff Scott Brown", "puneetbehl": "Puneet Behl", "rainboyan": "Michael Yan"]
 }
 
 integrationTest {
@@ -116,8 +120,7 @@ integrationTest {
     }
 }
 
-// exclude demo code from jar artifact
 jar {
-    includeEmptyDirs = false
-    exclude 'com/demo/**'
+    enabled = true
+    archiveClassifier.set('')
 }
