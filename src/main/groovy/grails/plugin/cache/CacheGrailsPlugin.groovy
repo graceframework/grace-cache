@@ -33,6 +33,7 @@ class CacheGrailsPlugin extends Plugin {
     // resources that should be loaded by the plugin once installed in the application
     //Does this even work anymore?  Doesn't appear to.
     def pluginExcludes = [
+            'cache/Application',
             '**/com/demo/**',
             'grails-app/views/**',
             '**/*.gsp'

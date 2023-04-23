@@ -123,4 +123,6 @@ integrationTest {
 jar {
     enabled = true
     archiveClassifier.set('')
+    exclude 'cache/Application.class', 'com/demo/**', 'gsp_*', '/gsp/views.properties'
+    includeEmptyDirs = false
 }
