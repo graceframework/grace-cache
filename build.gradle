@@ -6,14 +6,14 @@ buildscript {
         maven { url 'https://repo.gradle.org/gradle/libs-releases' }
     }
     dependencies {
-        classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
+        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.6.1'
         classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:$webdriverBinariesVersion"
     }
 }
 
 ext {
-    commonBuild = 'https://raw.githubusercontent.com/rainboyan/grails-common-build/22.0.x'
+    // commonBuild = 'https://raw.githubusercontent.com/rainboyan/grails-common-build/22.0.x'
 }
 
 version project.projectVersion
@@ -21,6 +21,7 @@ group "org.grails.plugins"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
+apply plugin:"java-library"
 apply plugin:"org.grails.grails-plugin"
 apply plugin:"org.grails.internal.grails-plugin-publish"
 apply plugin:"org.grails.grails-gsp"
@@ -34,23 +35,13 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.grails:grails-core"
-	compileOnly "org.grails:grails-datastore-core:$gormVersion"
-	compileOnly "org.grails:grails-datastore-gorm:$gormVersion"
-    implementation 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
-    implementation "org.springframework.boot:spring-boot-starter-actuator"
-    implementation "org.springframework.boot:spring-boot-starter-logging"
-    implementation "org.springframework.boot:spring-boot-starter-tomcat"
-    implementation "org.grails:grails-web-boot"
-    implementation "org.grails:grails-logging"
-    implementation "org.grails:grails-plugin-rest"
-    implementation "org.grails:grails-plugin-databinding"
-    implementation "org.grails:grails-plugin-i18n"
-    implementation "org.grails:grails-plugin-services"
-    implementation "org.grails:grails-plugin-url-mappings"
-    implementation "org.grails:grails-plugin-interceptors"
-    implementation "org.grails.plugins:gsp"
-    implementation "org.grails.plugins:geb:$gebVersion"
+    compileOnly "org.grails:grails-boot"
+    api "org.grails:grails-core"
+	api "org.grails:grails-datastore-core:$gormVersion"
+	api "org.grails:grails-datastore-gorm:$gormVersion"
+    api 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
+    api "org.grails:grails-web-gsp:$grailsGspVersion"
+    testImplementation "org.grails.plugins:geb:$gebVersion"
     profile "org.grails.profiles:web-plugin"
     testImplementation "org.grails:grails-gorm-testing-support"
     testImplementation "org.grails:grails-web-testing-support"
@@ -111,7 +102,7 @@ grailsPublish {
     }
     title = project.title
     desc = project.projectDesc
-    developers = [jeffbrown: "Jeff Scott Brown", "puneetbehl": "Puneet Behl", "rainboyan": "Michael Yan"]
+    developers = [jeffbrown: "Jeff Scott Brown", rainboyan: "Michael Yan"]
 }
 
 integrationTest {
@@ -123,4 +114,6 @@ integrationTest {
 jar {
     enabled = true
     archiveClassifier.set('')
+    exclude 'cache/Application.class', 'com/demo/**', 'gsp_*', '/gsp/views.properties'
+    includeEmptyDirs = false
 }

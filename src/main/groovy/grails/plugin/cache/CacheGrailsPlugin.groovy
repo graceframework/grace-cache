@@ -31,6 +31,7 @@ class CacheGrailsPlugin extends Plugin {
     def description = 'Grails Cache Plugin'
 
     def pluginExcludes = [
+            'cache/Application',
             '**/com/demo/**',
             'grails-app/views/**',
             '**/*.gsp'
