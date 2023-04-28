@@ -58,8 +58,8 @@ dependencies {
 }
 apply from: rootProject.file('gradle/testVerbose.gradle')
 
-sourceCompatibility = 11
-targetCompatibility = 11
+sourceCompatibility = 17
+targetCompatibility = 17
 
 webdriverBinaries {
     if (!System.getenv().containsKey('GITHUB_ACTIONS')) {
