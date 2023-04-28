@@ -37,10 +37,10 @@ repositories {
 dependencies {
     compileOnly "org.grails:grails-boot"
     api "org.grails:grails-core"
+    api "org.grails:grails-web-gsp"
 	api "org.grails:grails-datastore-core:$gormVersion"
 	api "org.grails:grails-datastore-gorm:$gormVersion"
     api 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
-    api "org.grails:grails-web-gsp:$grailsGspVersion"
     testImplementation "org.grails.plugins:geb:$gebVersion"
     profile "org.grails.profiles:web-plugin"
     testImplementation "org.grails:grails-gorm-testing-support"
