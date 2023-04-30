@@ -66,8 +66,7 @@ dependencies {
     api 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
     testImplementation "org.grails.plugins:geb:$gebVersion"
     profile "org.grails.profiles:web-plugin"
-    testImplementation "org.grails:grails-gorm-testing-support"
-    testImplementation "org.grails:grails-web-testing-support"
+    testImplementation "org.grails:grails-test-support"
     testImplementation "org.mockito:mockito-core"
     testImplementation "org.grails.plugins:geb"
     testImplementation "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
