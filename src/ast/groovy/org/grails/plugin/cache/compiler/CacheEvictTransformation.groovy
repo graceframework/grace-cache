@@ -29,7 +29,6 @@ import org.codehaus.groovy.ast.stmt.Statement
 import org.codehaus.groovy.control.CompilePhase
 import org.codehaus.groovy.control.SourceUnit
 import org.codehaus.groovy.transform.GroovyASTTransformation
-import org.h2.schema.Constant
 import org.springframework.cache.Cache
 
 import static org.codehaus.groovy.ast.ClassHelper.make
