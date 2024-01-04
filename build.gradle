@@ -29,6 +29,7 @@ apply plugin: "signing"
 
 repositories {
 	mavenCentral()
+    maven { url "https://repo.grails.org/grails/core" }
 }
 
 configurations {
@@ -46,6 +47,10 @@ dependencies {
 	documentation "com.github.javaparser:javaparser-core:3.15.14"
 
 	testImplementation "org.graceframework:grace-test-support:$graceVersion"
+    testImplementation 'org.codehaus.gpars:gpars:1.2.1', {
+        exclude group:'org.multiverse', module:'multiverse-core'
+        exclude group:'org.codehaus.groovy', module: 'groovy-all'
+    }
 	testImplementation 'javassist:javassist:3.12.0.GA'
 	testImplementation "org.codehaus.groovy:groovy-dateutil:$groovyVersion"
 	testImplementation "cglib:cglib-nodep:$cglibNodepVersion"
