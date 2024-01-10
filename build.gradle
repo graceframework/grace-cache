@@ -112,7 +112,7 @@ jar {
     enabled = true
     archiveClassifier.set('')
     includeEmptyDirs = false
-    exclude 'com/demo/**', 'gsp_**', 'gsp/**'
+    exclude 'gsp_**', 'gsp/**'
 }
 
 publishing {
