@@ -52,24 +52,15 @@ configurations {
                     details.useVersion(spockVersion)
                 }
             }
-            // Force groovy using 4.0
-            dependencySubstitution {
-                substitute(module("org.codehaus.groovy:groovy")).using(module("org.apache.groovy:groovy:$groovyVersion"))
-                substitute(module("org.codehaus.groovy:groovy-ant")).using(module("org.apache.groovy:groovy-ant:$groovyVersion"))
-                substitute(module("org.codehaus.groovy:groovy-dateutil")).using(module("org.apache.groovy:groovy-dateutil:$groovyVersion"))
-                substitute(module("org.codehaus.groovy:groovy-json")).using(module("org.apache.groovy:groovy-json:$groovyVersion"))
-                substitute(module("org.codehaus.groovy:groovy-jmx")).using(module("org.apache.groovy:groovy-jmx:$groovyVersion"))
-                substitute(module("org.codehaus.groovy:groovy-sql")).using(module("org.apache.groovy:groovy-sql:$groovyVersion"))
-                substitute(module("org.codehaus.groovy:groovy-templates")).using(module("org.apache.groovy:groovy-templates:$groovyVersion"))
-                substitute(module("org.codehaus.groovy:groovy-xml")).using(module("org.apache.groovy:groovy-xml:$groovyVersion"))
-            }
         }
     }
 }
 
 dependencies {
 	api "org.graceframework:grace-datastore-core:$gormVersion"
-	api "org.graceframework:grace-datastore-gorm:$gormVersion"
+	api "org.graceframework:grace-datastore-gorm:$gormVersion", {
+        exclude group: 'org.graceframework', module: 'grace-datastore-gorm-validation'
+    }
 	api "org.graceframework:grace-core:$graceVersion"
 	api "org.graceframework:grace-web-gsp:$graceVersion"
     api 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
