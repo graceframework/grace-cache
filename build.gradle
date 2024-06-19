@@ -139,6 +139,11 @@ publishing {
 
             from components.java
 
+            afterEvaluate {
+                artifact source:"${sourceSets.main.groovy.outputDir}/META-INF/grails-plugin.xml",
+                        classifier:"plugin",
+                        extension:'xml'
+            }
             pom {
                 name = "Grace Cache Plugin"
                 description = "Provides AST transformations for caching method calls"
