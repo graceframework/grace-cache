@@ -11,6 +11,18 @@
 
 Cache plugin provides powerful and easy to use caching functionality to Grace applications and plugins.
 
+## Versions
+
+To make it easier for users to use and upgrade, Plugin adopts a version policy consistent with the [Grace Framework](https://github.com/graceframework/grace-framework).
+
+| Plugin Version | Grace Version |
+|----------------|---------------|
+| 6.0.x          | 2023.0.x      |
+| 5.2.x          | 2022.2.x      |
+| 5.1.x          | 2022.1.x      |
+| 5.0.x          | 2022.0.x      |
+
 ## Links
 
 - [Grace Framework](https://github.com/graceframework/grace-framework)
+- [Grace Plugins](https://github.com/grace-plugins)
