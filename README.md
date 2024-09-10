@@ -1,15 +1,16 @@
-[![Java CI](https://github.com/grails/grails-cache/actions/workflows/gradle.yml/badge.svg)](https://github.com/grails/grails-cache/actions/workflows/gradle.yml)
+[![Main branch build status](https://github.com/graceframework/grace-cache/workflows/Grace%20CI/badge.svg?style=flat)](https://github.com/graceframework/grace-cache/actions?query=workflow%3A%Grace+CI%22)
+[![Apache 2.0 license](https://img.shields.io/badge/License-APACHE%202.0-green.svg?logo=APACHE&style=flat)](https://opensource.org/licenses/Apache-2.0)
+[![Latest version on Maven Central](https://img.shields.io/maven-central/v/org.graceframework.plugins/cache.svg?label=Maven%20Central&logo=apache-maven&style=flat)](https://search.maven.org/search?q=g:org.graceframework.plugins)
+[![Grace on X](https://img.shields.io/twitter/follow/graceframework?style=social)](https://twitter.com/graceframework)
 
-Grails Cache Plugin
-============
+[![Groovy Version](https://img.shields.io/badge/Groovy-4.0.22-blue?style=flat&color=4298b8)](https://groovy-lang.org/releasenotes/groovy-4.0.html)
+[![Grace Version](https://img.shields.io/badge/Grace-2023.0.0-blue?style=flat&color=f49b06)](https://github.com/graceframework/grace-framework/releases/tag/v2023.0.0)
+[![Spring Boot Version](https://img.shields.io/badge/Spring_Boot-3.0.13-blue?style=flat&color=6db33f)](https://github.com/spring-projects/spring-boot/releases)
 
-See [documentation](https://grails.github.io/grails-cache/) for further information.
+# Grace Cache Plugin
 
-## Branches
+Cache plugin provides powerful and easy to use caching functionality to Grace applications and plugins.
 
-The current master branch is for 6.0.x versions of the plugin.
-There is a 5.0.x branch for ongoing maintenance of 5.x versions of the plugin.
-There is a 3.x branch for ongoing maintenance of 3.x versions of the plugin.
-There is also a 1.x branch for on-going maintenance of 1.x versions of the plugin compatible with Grails 2.
-Please submit any pull requests to the appropriate branch.
-Changes to the 1.x branch will be merged into branches for more recent versions if appropriate.
+## Links
+
+- [Grace Framework](https://github.com/graceframework/grace-framework)
