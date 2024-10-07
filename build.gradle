@@ -73,7 +73,7 @@ dependencies {
         exclude group:'org.multiverse', module:'multiverse-core'
         exclude group:'org.codehaus.groovy', module: 'groovy-all'
     }
-	testImplementation 'javassist:javassist:3.12.0.GA'
+	testImplementation "javassist:javassist:$javassistVersion"
 	testImplementation "org.apache.groovy:groovy-dateutil:$groovyVersion"
 	testImplementation "cglib:cglib-nodep:$cglibNodepVersion"
 	testImplementation("org.jodd:jodd-wot:$joddWotVersion") {
