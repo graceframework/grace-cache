@@ -1,10 +1,11 @@
-/* Copyright 2012-2013 SpringSource.
+/*
+ * Copyright 2012-2024 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package grails.plugin.cache
 
 import grails.plugins.Plugin
@@ -22,6 +22,7 @@ import org.grails.plugin.cache.GrailsCacheManager
 import org.springframework.cache.Cache
 
 @Slf4j
+@CompileStatic
 class CacheGrailsPlugin extends Plugin {
 
     def grailsVersion = "2023.0.0 > *"
@@ -41,37 +42,12 @@ class CacheGrailsPlugin extends Plugin {
         config.getProperty('grails.cache.enabled', Boolean, true)
     }
 
-    Closure doWithSpring() {
-        { ->
-            if (!cachingEnabled) {
-                log.warn 'Cache plugin is disabled'
-                return
-            }
-
-            customCacheKeyGenerator(CustomCacheKeyGenerator)
-
-
-            Class<? extends GrailsCacheManager> cacheClazz = GrailsConcurrentMapCacheManager
-            // Selects cache manager from config
-            if (config.getProperty("grails.cache.cacheManager", String, null) == "GrailsConcurrentLinkedMapCacheManager") {
-                cacheClazz = GrailsConcurrentLinkedMapCacheManager
-            }
-
-            grailsCacheManager(cacheClazz) {
-                configuration = ref('grailsCacheConfiguration')
-            }
-            grailsCacheAdminService(GrailsCacheAdminService)
-            grailsCacheConfiguration(CachePluginConfiguration)
-        }
-    }
-
-    @CompileStatic
     void doWithApplicationContext() {
         if (cachingEnabled) {
-            CachePluginConfiguration pluginConfiguration = applicationContext.getBean('grailsCacheConfiguration', CachePluginConfiguration)
+            boolean clearAtStartup = config.getProperty('grails.cache.clearAtStartup', Boolean, Boolean.FALSE)
             GrailsCacheManager grailsCacheManager = applicationContext.getBean('grailsCacheManager', GrailsCacheManager)
 
-            if (pluginConfiguration.clearAtStartup) {
+            if (clearAtStartup) {
                 for (String cacheName in grailsCacheManager.cacheNames) {
                     log.info "Clearing cache $cacheName"
                     Cache cache = grailsCacheManager.getCache(cacheName)

@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties
  * @author James Kleeh
  */
 @CompileStatic
-@ConfigurationProperties(value = 'grails.cache')
+@ConfigurationProperties(value = 'grails.cache', ignoreUnknownFields = true)
 class CachePluginConfiguration {
 
     Boolean clearAtStartup = false
@@ -19,5 +19,5 @@ class CachePluginConfiguration {
     static class CacheConfig {
         Integer maxCapacity
     }
-}
 
+}
