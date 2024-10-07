@@ -66,7 +66,7 @@ dependencies {
     api 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
 	compileOnly "org.graceframework:grace-boot:$graceVersion"
     documentation "org.fusesource.jansi:jansi:$jansiVersion"
-	documentation "com.github.javaparser:javaparser-core:3.15.14"
+	documentation "com.github.javaparser:javaparser-core:$javaParserCoreVersion"
 
 	testImplementation "org.graceframework:grace-test-support:$graceVersion"
     testImplementation 'org.codehaus.gpars:gpars:1.2.1', {
