@@ -10,7 +10,7 @@ buildscript {
 	dependencies {
 		classpath "org.graceframework:grace-gradle-plugin:$graceVersion"
         classpath "io.github.gradle-nexus:publish-plugin:1.3.0"
-        classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:$webdriverBinariesVersion"
+        classpath "com.github.erdi:webdriver-binaries-gradle-plugin:$webdriverBinariesVersion"
 	}
 }
 
