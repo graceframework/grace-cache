@@ -25,7 +25,12 @@ class CacheGrailsPlugin extends Plugin {
     def observe = ['controllers', 'services']
     def loadAfter = ['controllers', 'services']
     def authorEmail = 'rain@rainboyan.com'
-    def description = 'Grace Cache Plugin'
+    def title = 'Grace Cache Plugin'
+    def description = 'Provides AST transformations for caching method calls'
+    def documentation = 'https://github.com/graceframework/grace-cache'
+    def license = 'APACHE'
+    def issueManagement = [system: 'Github', url: 'https://github.com/graceframework/grace-cache/issues']
+    def scm = [url: 'https://github.com/graceframework/grace-cache']
 
     def pluginExcludes = [
             'cache/Application',
