@@ -63,8 +63,8 @@ class GrailsConcurrentLinkedMapCacheManager implements GrailsCacheManager {
       return new GrailsConcurrentLinkedMapCache(name, capacity)
    }
 
-   void setConfiguration(CachePluginConfiguration configuration) {
-      configuration.caches.each { String key, CachePluginConfiguration.CacheConfig value ->
+   void setConfiguration(CacheProperties configuration) {
+      configuration.caches.each { String key, CacheProperties.CacheConfig value ->
          getCache(key, value.maxCapacity)
       }
    }

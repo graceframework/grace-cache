@@ -15,7 +15,6 @@
  */
 package grails.plugin.cache;
 
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -23,8 +22,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
-import grails.config.Config;
-import grails.core.GrailsApplication;
 import org.grails.plugin.cache.GrailsCacheManager;
 
 /**
@@ -35,12 +32,12 @@ import org.grails.plugin.cache.GrailsCacheManager;
  */
 @AutoConfiguration
 @ConditionalOnProperty(name = "grails.cache.enabled", havingValue = "true", matchIfMissing = true)
-@EnableConfigurationProperties(CachePluginConfiguration.class)
+@EnableConfigurationProperties(CacheProperties.class)
 public class CacheAutoConfiguration {
 
-    private final CachePluginConfiguration properties;
+    private final CacheProperties properties;
 
-    public CacheAutoConfiguration(CachePluginConfiguration properties) {
+    public CacheAutoConfiguration(CacheProperties properties) {
         this.properties = properties;
     }
 
@@ -52,10 +49,9 @@ public class CacheAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public GrailsCacheManager grailsCacheManager(ObjectProvider<GrailsApplication> grailsApplication) {
-        Config config = grailsApplication.getObject().getConfig();
-        String cacheManagerClassName = config.getProperty("grails.cache.cacheManager", String.class, "GrailsConcurrentMapCacheManager");
-        if (cacheManagerClassName.equals("GrailsConcurrentLinkedMapCacheManager")) {
+    public GrailsCacheManager grailsCacheManager() {
+        String cacheManagerClassName = this.properties.getCacheManager();
+        if (cacheManagerClassName.equals(CacheProperties.DEFAULT_CACHE_MANAGER)) {
             GrailsConcurrentLinkedMapCacheManager cacheManager = new GrailsConcurrentLinkedMapCacheManager();
             cacheManager.setConfiguration(this.properties);
             return cacheManager;

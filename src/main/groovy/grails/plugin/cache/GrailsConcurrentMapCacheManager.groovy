@@ -60,8 +60,8 @@ class GrailsConcurrentMapCacheManager implements GrailsCacheManager {
 		new GrailsConcurrentMapCache(name)
 	}
 
-	void setConfiguration(CachePluginConfiguration configuration) {
-		configuration.caches.each { String key, CachePluginConfiguration.CacheConfig value ->
+	void setConfiguration(CacheProperties configuration) {
+		configuration.caches.each { String key, CacheProperties.CacheConfig value ->
 			getCache(key)
 		}
 	}
