@@ -17,11 +17,7 @@ package grails.plugin.cache
 
 import grails.plugins.Plugin
 import groovy.transform.CompileStatic
-import groovy.util.logging.Slf4j
-import org.grails.plugin.cache.GrailsCacheManager
-import org.springframework.cache.Cache
 
-@Slf4j
 @CompileStatic
 class CacheGrailsPlugin extends Plugin {
 
@@ -38,29 +34,4 @@ class CacheGrailsPlugin extends Plugin {
             '**/*.gsp'
     ]
 
-    private boolean isCachingEnabled() {
-        config.getProperty('grails.cache.enabled', Boolean, true)
-    }
-
-    void doWithApplicationContext() {
-        if (cachingEnabled) {
-            boolean clearAtStartup = config.getProperty('grails.cache.clearAtStartup', Boolean, Boolean.FALSE)
-            GrailsCacheManager grailsCacheManager = applicationContext.getBean('grailsCacheManager', GrailsCacheManager)
-
-            if (clearAtStartup) {
-                for (String cacheName in grailsCacheManager.cacheNames) {
-                    log.info "Clearing cache $cacheName"
-                    Cache cache = grailsCacheManager.getCache(cacheName)
-                    cache.clear()
-                }
-            }
-
-            List<String> defaultCaches = ['grailsBlocksCache', 'grailsTemplatesCache']
-            for(name in defaultCaches) {
-                if (!grailsCacheManager.cacheExists(name)) {
-                    grailsCacheManager.getCache(name)
-                }
-            }
-        }
-    }
 }
