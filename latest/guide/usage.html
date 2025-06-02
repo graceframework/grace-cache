@@ -121,40 +121,16 @@ function addJsClass() {
 
 
 <div class="paragraph">
-<p>The cache plugin adds Spring bean method call, GSP page fragment and
-template caching to Grails applications. You configure one or more caches
-in <code>grails-app/conf/application.yml</code>, and
-annotate methods (either in Spring beans (typically Grails services)) to be cached.
-You can also wrap GSP sections in cache tags and render cached templates.</p>
+<p>The cache plugin adds Spring bean method call, GSP page fragment and template caching to Grace applications. You configure one or more caches in <code>app/conf/application.yml</code>, and annotate methods (either in Spring beans (typically Grace services)) to be cached. You can also wrap GSP sections in cache tags and render cached templates.</p>
 </div>
 <div class="paragraph">
-<p>There are three annotations; <a href="../api/grails/plugin/cache/Cacheable.html">Cacheable</a>,
-<a href="../api/grails/plugin/cache/CachePut.html">CachePut</a>,
-and <a href="../api/grails/plugin/cache/CacheEvict.html">CacheEvict</a>. You use
-<code>Cacheable</code> to mark a method as one that should check the cache for a
-pre-existing result, or generate a new result and cache it. Use <code>CachePut</code> to
-mark a method as one that should always be evaluated and store its result in the
-cache regardless of existing cache values. And use <code>@CacheEvict</code> to flush a cache
-(either fully or partially) to force the re-evaluation of previously cached
-results.</p>
+<p>There are three annotations; <a href="../api/grails/plugin/cache/Cacheable.html">Cacheable</a>, <a href="../api/grails/plugin/cache/CachePut.html">CachePut</a>, and <a href="../api/grails/plugin/cache/CacheEvict.html">CacheEvict</a>. You use <code>Cacheable</code> to mark a method as one that should check the cache for a pre-existing result, or generate a new result and cache it. Use <code>CachePut</code> to mark a method as one that should always be evaluated and store its result in the cache regardless of existing cache values. And use <code>@CacheEvict</code> to flush a cache (either fully or partially) to force the re-evaluation of previously cached results.</p>
 </div>
 <div class="paragraph">
-<p>When using distributed caching (such as ehcache with distributed cache enabled,
-or redis with multiple instances of the application running against one redis
-instance), all classes that use annotation caching or XML caching should
-override the <code>hashCode</code> method. The hash code of the object with the method
-marked as being cacheable is included in the cache key, and the default
-<code>hashCode</code> implementation will vary each time the application is run. Overriding
-<code>hashCode</code> ensures that each instance of the applications will appropriately
-share cache keys.</p>
+<p>When using distributed caching (such as ehcache with distributed cache enabled, or redis with multiple instances of the application running against one redis instance), all classes that use annotation caching or XML caching should override the <code>hashCode</code> method. The hash code of the object with the method marked as being cacheable is included in the cache key, and the default <code>hashCode</code> implementation will vary each time the application is run. Overriding <code>hashCode</code> ensures that each instance of the applications will appropriately share cache keys.</p>
 </div>
 <div class="paragraph">
-<p>This 'core' cache plugin uses an in-memory implementation where the caches and
-cache manager are backed by a thread-safe <code>java.util.concurrent.ConcurrentMap</code>.
-This is fine for testing and possibly for low-traffic sites, but you should
-consider using one of the extension plugins if you need clustering, disk
-storage, persistence between restarts, and more configurability of features like
-time-to-live, maximum cache size, etc. Currently the only extension plugin available for Grails 3 is <a href="https://plugins.grails.org/plugin/grails/cache-ehcache">cache-ehcache</a>.</p>
+<p>This 'core' cache plugin uses an in-memory implementation where the caches and cache manager are backed by a thread-safe <code>java.util.concurrent.ConcurrentMap</code>. This is fine for testing and possibly for low-traffic sites, but you should consider using one of the extension plugins if you need clustering, disk storage, persistence between restarts, and more configurability of features like time-to-live, maximum cache size, etc.</p>
 </div>
 
 
@@ -170,8 +146,7 @@ time-to-live, maximum cache size, etc. Currently the only extension plugin avail
 <div class="sect2">
 <h3 id="_configuration_options">Configuration Options</h3>
 <div class="paragraph">
-<p>There are a few configuration options for the plugin; these are specified in
-<code>grails-app/conf/application.yml</code>.</p>
+<p>There are a few configuration options for the plugin; these are specified in <code>app/conf/application.yml</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -205,11 +180,7 @@ time-to-live, maximum cache size, etc. Currently the only extension plugin avail
 </tbody>
 </table>
 <div class="paragraph">
-<p>The cache implementation used by this plugin is very simple, so there aren&#8217;t
-many configuration options (compared to the Ehcache implementation for example,
-where you have fine-grained control over features like overflowing to disk,
-time-to-live settings, maximum size of caches, etc.) So there aren&#8217;t many
-supported options in the cache configuration.</p>
+<p>The cache implementation used by this plugin is very simple, so there aren&#8217;t many configuration options (compared to the Ehcache implementation for example, where you have fine-grained control over features like overflowing to disk, time-to-live settings, maximum size of caches, etc.) So there aren&#8217;t many supported options in the cache configuration.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -218,11 +189,7 @@ supported options in the cache configuration.</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Since there is no way to configure "time to live" with this plugin, all
-cached items have no timeout and remain cached until either the JVM restarts
-(since the backing store is in-memory) or the cache is partially or fully
-cleared (by calling a method or action annotated with \@CacheEvict or
-programmatically).
+Since there is no way to configure "time to live" with this plugin, all cached items have no timeout and remain cached until either the JVM restarts (since the backing store is in-memory) or the cache is partially or fully cleared (by calling a method or action annotated with <code>@CacheEvict</code> or programmatically).
 </td>
 </tr>
 </table>
@@ -231,10 +198,7 @@ programmatically).
 <p>If you don&#8217;t need to supply any configuration to your cache, simply don&#8217;t include it in the configuration.</p>
 </div>
 <div class="paragraph">
-<p>If you want to limit the number of cache entries you have to change the default
-cache manager to <code>'GrailsConcurrentLinkedMapCacheManager'</code>. To specify the limit
-you can add the <code>maxCapacity</code> parameter to the cache config. Default value for
-<code>maxCapacity</code> is 10000.</p>
+<p>If you want to limit the number of cache entries you have to change the default cache manager to <code>'GrailsConcurrentLinkedMapCacheManager'</code>. To specify the limit you can add the <code>maxCapacity</code> parameter to the cache config. Default value for <code>maxCapacity</code> is 10000.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -395,7 +359,7 @@ you can add the <code>maxCapacity</code> parameter to the cache config. Default 
 <p>Note that for in-memory cache implementations it&#8217;s not required that the objects being cached implement <code>Serializable</code> but if you use an implementation that uses Java serialization (for example the Redis plugin, or the Ehcache plugin when you have configured clustered caching) you must implement <code>Serializable</code>.</p>
 </div>
 <div class="paragraph">
-<p>To test this out, be sure to define a <code>"message"</code> cache in <code>grails-app/conf/application.yml</code> and save and retrieve <code>Message</code> instances using the service. There are <code>println</code> statements but you can also turn on SQL logging to watch the database access that&#8217;s needed to retrieve instances that aren&#8217;t cached yet, and you shouldn&#8217;t see database access for cached values.</p>
+<p>To test this out, be sure to define a <code>"message"</code> cache in <code>app/conf/application.yml</code> and save and retrieve <code>Message</code> instances using the service. There are <code>println</code> statements but you can also turn on SQL logging to watch the database access that&#8217;s needed to retrieve instances that aren&#8217;t cached yet, and you shouldn&#8217;t see database access for cached values.</p>
 </div>
 </div>
 </div>
@@ -411,10 +375,7 @@ you can add the <code>maxCapacity</code> parameter to the cache config. Default 
 
 
 <div class="paragraph">
-<p>In general, code that is marked with cache related annotations can be unit
-tested without doing anything special to deal with caching.  The caching just
-won&#8217;t be enabled and the code in cached methods will be executed each time the
-method is invoked.</p>
+<p>In general, code that is marked with cache related annotations can be unit tested without doing anything special to deal with caching.  The caching just won&#8217;t be enabled and the code in cached methods will be executed each time the method is invoked.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -545,10 +506,10 @@ test.</p>
 
 
 <div class="paragraph">
-<p>The plugin registers an instance of the <a href="https://docs.spring.io/spring-framework/docs/6.1.19/javadoc-api/org/springframework/cache/CacheManager.html">CacheManager</a> interface as the <code>grailsCacheManager</code> Spring bean, so it&#8217;s easy to access using dependency injection.</p>
+<p>The plugin registers an instance of the <a href="https://docs.spring.io/spring-framework/docs/6.1.20/javadoc-api/org/springframework/cache/CacheManager.html">CacheManager</a> interface as the <code>grailsCacheManager</code> Spring bean, so it&#8217;s easy to access using dependency injection.</p>
 </div>
 <div class="paragraph">
-<p>The most common method you would call on the <code>grailsCacheManager</code> is <code>getCache(String name)</code> to access a <a href="https://docs.spring.io/spring-framework/docs/6.1.19/javadoc-api/org/springframework/cache/Cache.html">Cache</a> instance programmatically. This shouldn&#8217;t be needed often however. From the <code>Cache</code> instance you can also access the underlying cache implementation using <code>cache.getNativeCache()</code>.</p>
+<p>The most common method you would call on the <code>grailsCacheManager</code> is <code>getCache(String name)</code> to access a <a href="https://docs.spring.io/spring-framework/docs/6.1.20/javadoc-api/org/springframework/cache/Cache.html">Cache</a> instance programmatically. This shouldn&#8217;t be needed often however. From the <code>Cache</code> instance you can also access the underlying cache implementation using <code>cache.getNativeCache()</code>.</p>
 </div>
 
 

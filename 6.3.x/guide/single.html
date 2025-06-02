@@ -117,19 +117,7 @@ function addJsClass(el) {
 
 
 <div class="paragraph">
-<p>The Grails Cache plugin provides powerful and easy to use caching functionality to Grails applications and plugins.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Cache version 4.0.0 and higher requires GORM 6.1.x or higher
-</td>
-</tr>
-</table>
+<p>Grace Cache plugin provides powerful and easy to use caching functionality to Grace applications and plugins.</p>
 </div>
 
 
@@ -142,10 +130,724 @@ Cache version 4.0.0 and higher requires GORM 6.1.x or higher
 </div>
 
 
-<div class="sect2">
-<h3 id="changeLog">Change log</h3>
 <div class="paragraph">
 <p>For recent versions please check the <a href="https://github.com/graceframework/grace-cache/releases">release notes</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_6_3_0_rc1">6.3.0-RC1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.3.0-RC1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README Update badge versions of Grace, Groovy and Spring Boot</p>
+</li>
+<li>
+<p>Streamline Gradle build scripts: using the Spring Dependency Management Plugin to manage dependencies and versions <a href="https://github.com/graceframework/grace-cache/issues/54">#54</a></p>
+</li>
+<li>
+<p>Remove the unnecessary workaround for removing the generated extra dependencyManagement of POM <a href="https://github.com/graceframework/grace-cache/issues/53">#53</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.3.0-M2 <a href="https://github.com/graceframework/grace-cache/issues/48">#48</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.3.0-RC1 <a href="https://github.com/graceframework/grace-cache/issues/49">#49</a></p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.26 <a href="https://github.com/graceframework/grace-cache/issues/50">#50</a></p>
+</li>
+<li>
+<p>Upgrade to Java Parser 3.26.4 <a href="https://github.com/graceframework/grace-cache/issues/51">#51</a></p>
+</li>
+<li>
+<p>Upgrade to Spring Boot 3.3.10 <a href="https://github.com/graceframework/grace-cache/issues/52">#52</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.3.0-RC1</p>
+</li>
+<li>
+<p>build: update GitHub workflows</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_3_0_m1">6.3.0-M1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.3.0-M1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Update github workflows Switch to 6.3.x branch</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to AssertJ 3.25.3 <a href="https://github.com/graceframework/grace-cache/issues/45">#45</a></p>
+</li>
+<li>
+<p>Upgrade to CGLib Nodep 3.3.0 <a href="https://github.com/graceframework/grace-cache/issues/46">#46</a></p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.3.0-M1 <a href="https://github.com/graceframework/grace-cache/issues/43">#43</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.3.0-M1 <a href="https://github.com/graceframework/grace-cache/issues/47">#47</a></p>
+</li>
+<li>
+<p>Upgrade to Spring Boot 3.3.7 <a href="https://github.com/graceframework/grace-cache/issues/44">#44</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.3.0-M1</p>
+</li>
+<li>
+<p>Set version to 6.3.0-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_2_0">6.2.0</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.2.0">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Add GitHub issue template <a href="https://github.com/graceframework/grace-cache/issues/40">#40</a></p>
+</li>
+<li>
+<p>Update build scripts to avoid deprecation warnings with Gradle 8 <a href="https://github.com/graceframework/grace-cache/issues/39">#39</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.2.0-RC1 <a href="https://github.com/graceframework/grace-cache/issues/38">#38</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.2.0 <a href="https://github.com/graceframework/grace-cache/issues/41">#41</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.2.0</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_2_0_rc1">6.2.0-RC1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.2.0-RC1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Excludes demo classes in plugin jar <a href="https://github.com/graceframework/grace-cache/issues/37">#37</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.2.0-M3 <a href="https://github.com/graceframework/grace-cache/issues/35">#35</a></p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.2.0-M2 <a href="https://github.com/graceframework/grace-cache/issues/33">#33</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.2.0-RC1 <a href="https://github.com/graceframework/grace-cache/issues/34">#34</a></p>
+</li>
+<li>
+<p>Upgrade to Gradle 8.12 <a href="https://github.com/graceframework/grace-cache/issues/36">#36</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.2.0-RC1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_2_0_m1">6.2.0-M1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.2.0-M1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README Update badge of Grace to current version</p>
+</li>
+<li>
+<p>Update github workflows</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.2.0-M1 <a href="https://github.com/graceframework/grace-cache/issues/28">#28</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.2.0-M1 <a href="https://github.com/graceframework/grace-cache/issues/32">#32</a></p>
+</li>
+<li>
+<p>Upgrade to JUnit Jupiter 5.10.5 <a href="https://github.com/graceframework/grace-cache/issues/30">#30</a></p>
+</li>
+<li>
+<p>Upgrade to JUnit Platform 1.10.5 <a href="https://github.com/graceframework/grace-cache/issues/31">#31</a></p>
+</li>
+<li>
+<p>Upgrade to Spring Boot 3.2.12 <a href="https://github.com/graceframework/grace-cache/issues/29">#29</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.2.0-M1</p>
+</li>
+<li>
+<p>Set version to 6.2.0-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0">6.1.0</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.1.0">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update Badges</p>
+</li>
+<li>
+<p>Use Java 17 toolchain <a href="https://github.com/graceframework/grace-cache/issues/26">#26</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.1.0-RC1 <a href="https://github.com/graceframework/grace-cache/issues/23">#23</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.1.0 <a href="https://github.com/graceframework/grace-cache/issues/24">#24</a></p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.24 <a href="https://github.com/graceframework/grace-cache/issues/25">#25</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0_rc1">6.1.0-RC1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.1.0-RC1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use <code>classesDirectory</code> property instead of deprecated <code>outputDir</code> <a href="https://github.com/graceframework/grace-cache/issues/22">#22</a></p>
+</li>
+<li>
+<p>Add dependency <code>jakarta.annotation-api</code> explicitly <a href="https://github.com/graceframework/grace-cache/issues/20">#20</a></p>
+</li>
+<li>
+<p>Update build scripts</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.1.0-M3 <a href="https://github.com/graceframework/grace-cache/issues/18">#18</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.1.0-RC1 <a href="https://github.com/graceframework/grace-cache/issues/19">#19</a></p>
+</li>
+<li>
+<p>Upgrade to Gradle Nexus Publish Plugin 2.0.0 <a href="https://github.com/graceframework/grace-cache/issues/21">#21</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0-RC1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0_m3">6.1.0-M3</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.1.0-M3">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Generate Spring Boot configuration metadata file <a href="https://github.com/graceframework/grace-cache/issues/16">#16</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.1.0-M2 <a href="https://github.com/graceframework/grace-cache/issues/15">#15</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.1.0-M3 <a href="https://github.com/graceframework/grace-cache/issues/17">#17</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0-M3</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0_m2">6.1.0-M2</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.1.0-M2">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enable <code>CacheProperties</code> to generate metadata Use Java rewriting and renaming <code>CachePluginConfiguration</code> to <code>CacheProperties</code> <a href="https://github.com/graceframework/grace-cache/issues/14">#14</a></p>
+</li>
+<li>
+<p>Update meta info of Cache plugin <a href="https://github.com/graceframework/grace-cache/issues/13">#13</a></p>
+</li>
+<li>
+<p>Use <code>ClearCachesApplicationListener</code> replace of <code>Plugin.doWithApplicationContext</code> <a href="https://github.com/graceframework/grace-cache/issues/12">#12</a></p>
+</li>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Enable Unit Tests <a href="https://github.com/graceframework/grace-cache/issues/10">#10</a></p>
+</li>
+<li>
+<p>Auto-Configure Cache Plugin <a href="https://github.com/graceframework/grace-cache/issues/7">#7</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.1.0-M1 <a href="https://github.com/graceframework/grace-cache/issues/3">#3</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.1.0-M2 <a href="https://github.com/graceframework/grace-cache/issues/11">#11</a></p>
+</li>
+<li>
+<p>Upgrade to Jansi 2.4.0 <a href="https://github.com/graceframework/grace-cache/issues/4">#4</a></p>
+</li>
+<li>
+<p>Upgrade to Java Parser 3.26.2 <a href="https://github.com/graceframework/grace-cache/issues/5">#5</a></p>
+</li>
+<li>
+<p>Upgrade to Javassist 3.30.2-GA <a href="https://github.com/graceframework/grace-cache/issues/6">#6</a></p>
+</li>
+<li>
+<p>Upgrade to Selenium 4.2.2 <a href="https://github.com/graceframework/grace-cache/issues/9">#9</a></p>
+</li>
+<li>
+<p>Upgrade to Webdriver Binaries Gradle Plugin 3.2 <a href="https://github.com/graceframework/grace-cache/issues/8">#8</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0-M2</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0_m1">6.1.0-M1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.1.0-M1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Update README</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.0.2</p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.23</p>
+</li>
+<li>
+<p>Upgrade to GORM 2023.1.0-M1 <a href="https://github.com/graceframework/grace-cache/issues/2">#2</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0-M1</p>
+</li>
+<li>
+<p>Update github workflows</p>
+</li>
+<li>
+<p>Set version to 6.1.0-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_1">6.0.1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.0.1">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.1</p>
+</li>
+<li>
+<p>Upgrade to Grace Geb Plugin 6.0.1</p>
+</li>
+<li>
+<p>Upgrade to GORM 2023.0.1</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0</p>
+</li>
+<li>
+<p>Set version to 6.0.1-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0">6.0.0</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.0.0">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.0</p>
+</li>
+<li>
+<p>Upgrade to Grace Geb Plugin 6.0.0</p>
+</li>
+<li>
+<p>Upgrade to GORM 2023.0.0</p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.22</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-RC2</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0_rc1">6.0.0-RC1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.0.0-RC1">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.0-RC1</p>
+</li>
+<li>
+<p>Upgrade to Grace Geb Plugin 6.0.0-RC1</p>
+</li>
+<li>
+<p>Upgrade to GORM 2023.0.0-RC1</p>
+</li>
+<li>
+<p>Upgrade to Gradle Wrapper 7.6.4</p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.21</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-M7</p>
+</li>
+<li>
+<p>Remove unused grailsw</p>
+</li>
+<li>
+<p>Set <code>archiveClassifier</code> with 'plugin'</p>
+</li>
+<li>
+<p>Update github workflows</p>
+</li>
+<li>
+<p>Back to 6.0.0-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0_m3">6.0.0-M3</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.0.0-M3">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.0-M3</p>
+</li>
+<li>
+<p>Upgrade to Grace Geb Plugin 6.0.0-M2</p>
+</li>
+<li>
+<p>Add artifact <code>grails-plugin.xml</code></p>
+</li>
+<li>
+<p>Upgrade to Grace GORM 2023.0.0-M5</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-M6</p>
+</li>
+<li>
+<p>Grace: update github workflows</p>
+</li>
+<li>
+<p>Grace: migrate to grace</p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.12</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0_m2">6.0.0-M2</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.0.0-M2">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.0-M2</p>
+</li>
+<li>
+<p>Upgrade to Grace Geb Plugin 6.0.0-M1</p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.0.0-M4</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-M5</p>
+</li>
+<li>
+<p>Grace: update github workflows</p>
+</li>
+<li>
+<p>Grace: migrate to grace</p>
+</li>
+<li>
+<p>Adding spockVersion in gradle.properties</p>
+</li>
+<li>
+<p>Back to Snapshots</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0_m1">6.0.0-M1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-cache/releases/tag/v6.0.0-M1">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Grace: update github workflows</p>
+</li>
+<li>
+<p>Update plugin info</p>
+</li>
+<li>
+<p>Grace: update build scripts</p>
+</li>
+<li>
+<p>Configure spockVersion property</p>
+</li>
+<li>
+<p>Grace: update github workflows</p>
+</li>
+<li>
+<p>Grace: update build scripts</p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.11</p>
+</li>
+<li>
+<p>Upgrade to Grace GORM 2023.0.0-M2</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-M2</p>
+</li>
+<li>
+<p>Grace: migrate to grace</p>
+</li>
+<li>
+<p>Migrate to Jakarta: Jakarta Servlet 6.0.0</p>
+</li>
+<li>
+<p>Force to use Groovy 4</p>
+</li>
+<li>
+<p>Build target to Java 17</p>
+</li>
+</ul>
 </div>
 </div>
 
@@ -160,40 +862,16 @@ Cache version 4.0.0 and higher requires GORM 6.1.x or higher
 
 
 <div class="paragraph">
-<p>The cache plugin adds Spring bean method call, GSP page fragment and
-template caching to Grails applications. You configure one or more caches
-in <code>grails-app/conf/application.yml</code>, and
-annotate methods (either in Spring beans (typically Grails services)) to be cached.
-You can also wrap GSP sections in cache tags and render cached templates.</p>
+<p>The cache plugin adds Spring bean method call, GSP page fragment and template caching to Grace applications. You configure one or more caches in <code>app/conf/application.yml</code>, and annotate methods (either in Spring beans (typically Grace services)) to be cached. You can also wrap GSP sections in cache tags and render cached templates.</p>
 </div>
 <div class="paragraph">
-<p>There are three annotations; <a href="../api/grails/plugin/cache/Cacheable.html">Cacheable</a>,
-<a href="../api/grails/plugin/cache/CachePut.html">CachePut</a>,
-and <a href="../api/grails/plugin/cache/CacheEvict.html">CacheEvict</a>. You use
-<code>Cacheable</code> to mark a method as one that should check the cache for a
-pre-existing result, or generate a new result and cache it. Use <code>CachePut</code> to
-mark a method as one that should always be evaluated and store its result in the
-cache regardless of existing cache values. And use <code>@CacheEvict</code> to flush a cache
-(either fully or partially) to force the re-evaluation of previously cached
-results.</p>
+<p>There are three annotations; <a href="../api/grails/plugin/cache/Cacheable.html">Cacheable</a>, <a href="../api/grails/plugin/cache/CachePut.html">CachePut</a>, and <a href="../api/grails/plugin/cache/CacheEvict.html">CacheEvict</a>. You use <code>Cacheable</code> to mark a method as one that should check the cache for a pre-existing result, or generate a new result and cache it. Use <code>CachePut</code> to mark a method as one that should always be evaluated and store its result in the cache regardless of existing cache values. And use <code>@CacheEvict</code> to flush a cache (either fully or partially) to force the re-evaluation of previously cached results.</p>
 </div>
 <div class="paragraph">
-<p>When using distributed caching (such as ehcache with distributed cache enabled,
-or redis with multiple instances of the application running against one redis
-instance), all classes that use annotation caching or XML caching should
-override the <code>hashCode</code> method. The hash code of the object with the method
-marked as being cacheable is included in the cache key, and the default
-<code>hashCode</code> implementation will vary each time the application is run. Overriding
-<code>hashCode</code> ensures that each instance of the applications will appropriately
-share cache keys.</p>
+<p>When using distributed caching (such as ehcache with distributed cache enabled, or redis with multiple instances of the application running against one redis instance), all classes that use annotation caching or XML caching should override the <code>hashCode</code> method. The hash code of the object with the method marked as being cacheable is included in the cache key, and the default <code>hashCode</code> implementation will vary each time the application is run. Overriding <code>hashCode</code> ensures that each instance of the applications will appropriately share cache keys.</p>
 </div>
 <div class="paragraph">
-<p>This 'core' cache plugin uses an in-memory implementation where the caches and
-cache manager are backed by a thread-safe <code>java.util.concurrent.ConcurrentMap</code>.
-This is fine for testing and possibly for low-traffic sites, but you should
-consider using one of the extension plugins if you need clustering, disk
-storage, persistence between restarts, and more configurability of features like
-time-to-live, maximum cache size, etc. Currently the only extension plugin available for Grails 3 is <a href="https://plugins.grails.org/plugin/grails/cache-ehcache">cache-ehcache</a>.</p>
+<p>This 'core' cache plugin uses an in-memory implementation where the caches and cache manager are backed by a thread-safe <code>java.util.concurrent.ConcurrentMap</code>. This is fine for testing and possibly for low-traffic sites, but you should consider using one of the extension plugins if you need clustering, disk storage, persistence between restarts, and more configurability of features like time-to-live, maximum cache size, etc.</p>
 </div>
 
 
@@ -209,8 +887,7 @@ time-to-live, maximum cache size, etc. Currently the only extension plugin avail
 <div class="sect2">
 <h3 id="_configuration_options">Configuration Options</h3>
 <div class="paragraph">
-<p>There are a few configuration options for the plugin; these are specified in
-<code>grails-app/conf/application.yml</code>.</p>
+<p>There are a few configuration options for the plugin; these are specified in <code>app/conf/application.yml</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -244,11 +921,7 @@ time-to-live, maximum cache size, etc. Currently the only extension plugin avail
 </tbody>
 </table>
 <div class="paragraph">
-<p>The cache implementation used by this plugin is very simple, so there aren&#8217;t
-many configuration options (compared to the Ehcache implementation for example,
-where you have fine-grained control over features like overflowing to disk,
-time-to-live settings, maximum size of caches, etc.) So there aren&#8217;t many
-supported options in the cache configuration.</p>
+<p>The cache implementation used by this plugin is very simple, so there aren&#8217;t many configuration options (compared to the Ehcache implementation for example, where you have fine-grained control over features like overflowing to disk, time-to-live settings, maximum size of caches, etc.) So there aren&#8217;t many supported options in the cache configuration.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -257,11 +930,7 @@ supported options in the cache configuration.</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Since there is no way to configure "time to live" with this plugin, all
-cached items have no timeout and remain cached until either the JVM restarts
-(since the backing store is in-memory) or the cache is partially or fully
-cleared (by calling a method or action annotated with \@CacheEvict or
-programmatically).
+Since there is no way to configure "time to live" with this plugin, all cached items have no timeout and remain cached until either the JVM restarts (since the backing store is in-memory) or the cache is partially or fully cleared (by calling a method or action annotated with <code>@CacheEvict</code> or programmatically).
 </td>
 </tr>
 </table>
@@ -270,10 +939,7 @@ programmatically).
 <p>If you don&#8217;t need to supply any configuration to your cache, simply don&#8217;t include it in the configuration.</p>
 </div>
 <div class="paragraph">
-<p>If you want to limit the number of cache entries you have to change the default
-cache manager to <code>'GrailsConcurrentLinkedMapCacheManager'</code>. To specify the limit
-you can add the <code>maxCapacity</code> parameter to the cache config. Default value for
-<code>maxCapacity</code> is 10000.</p>
+<p>If you want to limit the number of cache entries you have to change the default cache manager to <code>'GrailsConcurrentLinkedMapCacheManager'</code>. To specify the limit you can add the <code>maxCapacity</code> parameter to the cache config. Default value for <code>maxCapacity</code> is 10000.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -434,7 +1100,7 @@ you can add the <code>maxCapacity</code> parameter to the cache config. Default 
 <p>Note that for in-memory cache implementations it&#8217;s not required that the objects being cached implement <code>Serializable</code> but if you use an implementation that uses Java serialization (for example the Redis plugin, or the Ehcache plugin when you have configured clustered caching) you must implement <code>Serializable</code>.</p>
 </div>
 <div class="paragraph">
-<p>To test this out, be sure to define a <code>"message"</code> cache in <code>grails-app/conf/application.yml</code> and save and retrieve <code>Message</code> instances using the service. There are <code>println</code> statements but you can also turn on SQL logging to watch the database access that&#8217;s needed to retrieve instances that aren&#8217;t cached yet, and you shouldn&#8217;t see database access for cached values.</p>
+<p>To test this out, be sure to define a <code>"message"</code> cache in <code>app/conf/application.yml</code> and save and retrieve <code>Message</code> instances using the service. There are <code>println</code> statements but you can also turn on SQL logging to watch the database access that&#8217;s needed to retrieve instances that aren&#8217;t cached yet, and you shouldn&#8217;t see database access for cached values.</p>
 </div>
 </div>
 </div>
@@ -450,10 +1116,7 @@ you can add the <code>maxCapacity</code> parameter to the cache config. Default 
 
 
 <div class="paragraph">
-<p>In general, code that is marked with cache related annotations can be unit
-tested without doing anything special to deal with caching.  The caching just
-won&#8217;t be enabled and the code in cached methods will be executed each time the
-method is invoked.</p>
+<p>In general, code that is marked with cache related annotations can be unit tested without doing anything special to deal with caching.  The caching just won&#8217;t be enabled and the code in cached methods will be executed each time the method is invoked.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -584,10 +1247,10 @@ test.</p>
 
 
 <div class="paragraph">
-<p>The plugin registers an instance of the <a href="https://docs.spring.io/spring-framework/docs/6.1.19/javadoc-api/org/springframework/cache/CacheManager.html">CacheManager</a> interface as the <code>grailsCacheManager</code> Spring bean, so it&#8217;s easy to access using dependency injection.</p>
+<p>The plugin registers an instance of the <a href="https://docs.spring.io/spring-framework/docs/6.1.20/javadoc-api/org/springframework/cache/CacheManager.html">CacheManager</a> interface as the <code>grailsCacheManager</code> Spring bean, so it&#8217;s easy to access using dependency injection.</p>
 </div>
 <div class="paragraph">
-<p>The most common method you would call on the <code>grailsCacheManager</code> is <code>getCache(String name)</code> to access a <a href="https://docs.spring.io/spring-framework/docs/6.1.19/javadoc-api/org/springframework/cache/Cache.html">Cache</a> instance programmatically. This shouldn&#8217;t be needed often however. From the <code>Cache</code> instance you can also access the underlying cache implementation using <code>cache.getNativeCache()</code>.</p>
+<p>The most common method you would call on the <code>grailsCacheManager</code> is <code>getCache(String name)</code> to access a <a href="https://docs.spring.io/spring-framework/docs/6.1.20/javadoc-api/org/springframework/cache/Cache.html">Cache</a> instance programmatically. This shouldn&#8217;t be needed often however. From the <code>Cache</code> instance you can also access the underlying cache implementation using <code>cache.getNativeCache()</code>.</p>
 </div>
 
 

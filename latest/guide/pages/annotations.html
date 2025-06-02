@@ -246,7 +246,7 @@ function addJsClass() {
 <p>Note that for in-memory cache implementations it&#8217;s not required that the objects being cached implement <code>Serializable</code> but if you use an implementation that uses Java serialization (for example the Redis plugin, or the Ehcache plugin when you have configured clustered caching) you must implement <code>Serializable</code>.</p>
 </div>
 <div class="paragraph">
-<p>To test this out, be sure to define a <code>"message"</code> cache in <code>grails-app/conf/application.yml</code> and save and retrieve <code>Message</code> instances using the service. There are <code>println</code> statements but you can also turn on SQL logging to watch the database access that&#8217;s needed to retrieve instances that aren&#8217;t cached yet, and you shouldn&#8217;t see database access for cached values.</p>
+<p>To test this out, be sure to define a <code>"message"</code> cache in <code>app/conf/application.yml</code> and save and retrieve <code>Message</code> instances using the service. There are <code>println</code> statements but you can also turn on SQL logging to watch the database access that&#8217;s needed to retrieve instances that aren&#8217;t cached yet, and you shouldn&#8217;t see database access for cached values.</p>
 </div>
 </div>
 </div>
@@ -262,10 +262,7 @@ function addJsClass() {
 
 
 <div class="paragraph">
-<p>In general, code that is marked with cache related annotations can be unit
-tested without doing anything special to deal with caching.  The caching just
-won&#8217;t be enabled and the code in cached methods will be executed each time the
-method is invoked.</p>
+<p>In general, code that is marked with cache related annotations can be unit tested without doing anything special to deal with caching.  The caching just won&#8217;t be enabled and the code in cached methods will be executed each time the method is invoked.</p>
 </div>
 <div class="listingblock">
 <div class="content">
