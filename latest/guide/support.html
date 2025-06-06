@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>5.1 Clearing Caches 6.3.0-SNAPSHOT</title>
+    <title>7 Support 6.3.0-SNAPSHOT</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -34,29 +34,29 @@ function addJsClass() {
         <ul>
             <li>
                 <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
-                    <a href="../../guide/index.html" class="button">Table of contents</a>
+                    <a href="../guide/index.html" class="button">Table of contents</a>
 
                     <div id="nav-summary-childs" style="display:none;">
                         
-                        <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
                         </div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="../../guide/releases.html"><strong>2</strong><span>Release History</span></a>
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/releases.html"><strong>2</strong><span>Release History</span></a>
                         </div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="../../guide/usage.html"><strong>3</strong><span>Usage</span></a>
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/usage.html"><strong>3</strong><span>Usage</span></a>
                         </div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="../../guide/cacheTags.html"><strong>4</strong><span>Caching Tags</span></a>
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/cacheTags.html"><strong>4</strong><span>Caching Tags</span></a>
                         </div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="../../guide/grailsCacheAdminService.html"><strong>5</strong><span>The Cache Admin Service</span></a>
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/grailsCacheAdminService.html"><strong>5</strong><span>The Cache Admin Service</span></a>
                         </div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="../../guide/implementation.html"><strong>6</strong><span>Implementation Details</span></a>
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/implementation.html"><strong>6</strong><span>Implementation Details</span></a>
                         </div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="../../guide/support.html"><strong>7</strong><span>Support</span></a>
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/support.html"><strong>7</strong><span>Support</span></a>
                         </div>
                         
                     </div>
@@ -80,18 +80,16 @@ function addJsClass() {
             <div id="main" class="corner-all">
 
                 
-                    <div class="toc-item prev-left"><a href="../../guide/cacheTags.html">&lt;&lt; <strong>4</strong><span>Caching Tags</span></a></div>
+                    <div class="toc-item prev-left"><a href="../guide/implementation.html">&lt;&lt; <strong>6</strong><span>Implementation Details</span></a></div>
                 
 
                 <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
 
                 
-                    <div class="toc-item next-right"><a href="../../guide/implementation.html"><strong>6</strong><span>Implementation Details</span> >></a></div>
-                
 
 
                 <div class="project">
-                    <h1>5.1 Clearing Caches</h1>
+                    <h1>7 Support</h1>
 
                     <p><strong>Version:</strong> 6.3.0-SNAPSHOT</p>
                 </div>
@@ -100,43 +98,23 @@ function addJsClass() {
 
                 
 
-<h2 id="clearingCaches"><a class="anchor" href="#clearingCaches"></a>5.1 Clearing Caches</h2>
+<h1 id="support"><a class="anchor" href="#support"></a>7 Support</h1>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-cache/edit/6.3.x/src/main/docs/guide/grailsCacheAdminService/clearingCaches.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-cache/edit/6.3.x/src/main/docs/guide/support.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
 
 
 <div class="paragraph">
-<p>There are methods in <a href="../api/grails/plugin/cache/GrailsCacheAdminService.html">GrailsCacheAdminService</a> for clearing the caches used by the <a href="../ref/Tags/block.html">block</a> and <a href="../ref/Tags/render.html">render</a> tags.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">ReportingController</span> {
-
-    def grailsCacheAdminService
-
-    def report() {
-        <span class="comment">// clear the cache used by the blocks tag...</span>
-        grailsCacheAdminService.clearBlocksCache()
-
-        <span class="comment">// clear the cache used by the render tag...</span>
-        grailsCacheAdminService.clearTemplatesCache()
-
-        ...
-    }
-}</code></pre>
-</div>
+<p>For support, please use the <a href="https://github.com/orgs/graceframework/discussions">Grace Discussions</a> or open an issue on <a href="https://github.com/graceframework/grace-cache/issues">Github Issues</a>.</p>
 </div>
 
 
                 <div style="clear:both;margin-top:15px;"></div>
                 
-                    <div class="toc-item prev-left"><a href="../../guide/cacheTags.html">&lt;&lt; <strong>4</strong><span>Caching Tags</span></a></div>
-                
-                    <div class="toc-item next-right"><a href="../../guide/implementation.html"><strong>6</strong><span>Implementation Details</span> >></a></div>
+                    <div class="toc-item prev-left"><a href="../guide/implementation.html">&lt;&lt; <strong>6</strong><span>Implementation Details</span></a></div>
                 
                 <div style="clear:both"></div>
             </div>
@@ -144,7 +122,7 @@ function addJsClass() {
         <td id="col2">
             <div class="local clearfix">
                 <div class="local-title">
-                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
                     <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
                 </div>
                 <div class="menu">
@@ -152,10 +130,10 @@ function addJsClass() {
                     <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Tags</h1><div class="menu-sub">
                         
                             
-                            <div class="menu-item"><a href="../../ref/Tags/block.html">block</a>
+                            <div class="menu-item"><a href="../ref/Tags/block.html">block</a>
                             </div>
                             
-                            <div class="menu-item"><a href="../../ref/Tags/render.html">render</a>
+                            <div class="menu-item"><a href="../ref/Tags/render.html">render</a>
                             </div>
                             
                             </div>
